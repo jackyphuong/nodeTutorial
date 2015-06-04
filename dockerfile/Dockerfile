@@ -1,10 +1,19 @@
 FROM node
-RUN  apt-get update
-# install nodejs and npm
-#RUN apt-get install -y nodejs npm git git-core
 
-ADD start.sh /tmp/
+ENV WDIR /demoSrc
 
-RUN chmod +x /tmp/start.sh
+RUN  apt-get update \
+		&& apt-get install -y nodejs npm git git-core \
+		&& npm install --save-dev babel-core
+		
+RUN mkdir -p $WDIR
 
-CMD ./tmp/start.sh
+RUN git clone https://github.com/jackyphuong/nodeTutorial.git $WDIR
+
+WORKDIR $WDIR\rethinkdb
+
+RUN npm install
+EXPOSE 8000
+
+CMD ["npm run web"]
+
