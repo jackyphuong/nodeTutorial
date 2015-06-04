@@ -3,7 +3,7 @@
  */
 
 // You must have an element with the ID `dropzone`
-var socket = io.connect('http://localhost:8000');
+var socket = io.connect('http://jackyu1404.cloudapp.net:8000');
 
 socket.on('Image:update', function (image) {
     var reader = new FileReader();
