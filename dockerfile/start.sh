@@ -1,4 +1,5 @@
 cd /tmp
+chown harveynash:harveynash /tmp 
 rm -rf nodeTutorial; true
 git clone https://github.com/jackyphuong/nodeTutorial.git
 #cd /nodeTutorial/rethinkdb
