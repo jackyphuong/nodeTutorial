@@ -1,7 +1,7 @@
 cd /tmp
-rm -rf rethinkdb; true
+rm -rf nodeTutorial; true
 git clone https://github.com/jackyphuong/nodeTutorial.git
-cd rethinkdb
+cd /nodeTutorial/rethinkdb
 npm install
 
 node .
